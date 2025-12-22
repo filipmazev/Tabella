@@ -12,3 +12,4 @@
 /Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.xml
 /Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.pdb
 /Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/ref/Tabella.dll
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.sourcelink.json

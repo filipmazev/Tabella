@@ -904,12 +904,12 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="T:Tabella.TabularFileImportMessageServiceCollectionExtensions">
+        <member name="T:Tabella.TabellaServiceCollectionExtensions">
             <summary>
             Extension methods for registering tabular file import message services.
             </summary>
         </member>
-        <member name="M:Tabella.TabularFileImportMessageServiceCollectionExtensions.AddTabularFileImportMessages(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Tabella.Configuration.TabularFileImportMessageOptions},System.Action{MessageKit.MessageOptions})">
+        <member name="M:Tabella.TabellaServiceCollectionExtensions.AddTabella(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Tabella.Configuration.TabularFileImportMessageOptions},System.Action{MessageKit.MessageOptions})">
             <summary>
             Registers services for tabular file import messages.
             </summary>

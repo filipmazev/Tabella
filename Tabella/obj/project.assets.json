@@ -328,7 +328,7 @@
     "/Users/filipmazev/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "restore": {
       "projectUniqueName": "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/Tabella.csproj",
       "projectName": "Tabella",
@@ -343,7 +343,9 @@
         "net10.0"
       ],
       "sources": {
+        "/Users/filipmazev/.nuget/NuGet/": {},
         "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/MessageKit/bin/Release": {},
+        "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

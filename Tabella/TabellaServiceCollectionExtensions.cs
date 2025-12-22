@@ -15,7 +15,7 @@ namespace Tabella;
 /// <summary>
 /// Extension methods for registering tabular file import message services.
 /// </summary>
-public static class TabularFileImportMessageServiceCollectionExtensions
+public static class TabellaServiceCollectionExtensions
 {
     /// <summary>
     /// Registers services for tabular file import messages.
@@ -24,7 +24,7 @@ public static class TabularFileImportMessageServiceCollectionExtensions
     /// <param name="configure"></param>
     /// <param name="configureMessageOptions"></param>
     /// <returns></returns>
-    public static IServiceCollection AddTabularFileImportMessages(
+    public static IServiceCollection AddTabella(
         this IServiceCollection services,
         Action<TabularFileImportMessageOptions> configure,
         Action<MessageOptions> configureMessageOptions)
