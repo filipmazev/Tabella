@@ -1,0 +1,1622 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tabella</name>
+    </assembly>
+    <members>
+        <member name="T:Tabella.Configuration.TabularFileImportMessageOptions">
+            <summary>
+            Configuration options for tabular file import messages.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.DefaultSender">
+            <summary>
+            The default sender name for messages.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ExcelHeaderRowBackgroundFillColor">
+            <summary>
+            The background fill color for Excel header rows in ARGB hex format.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ExcelHeaderRowTextColor">
+            <summary>
+            The text color for Excel header rows in ARGB hex format.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.NoWorksheetsFoundKey">
+            <summary>
+            Key for the message indicating no worksheets were found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.WorksheetNotFoundKey">
+            <summary>
+            Key for the message indicating a specific worksheet was not found.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.HeaderNotFoundAtIndexKey">
+            <summary>
+            Key for the message indicating the header row was not found at the expected index.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CannotDeleteEntityKey">
+            <summary>
+            Key for the message indicating a required entity cannot be deleted because it is in use.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.DuplicateEntryKey">
+            <summary>
+            Key for the message indicating a duplicate entry was found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.InvalidDateRangeKey">
+            <summary>
+            Key for the message indicating an invalid date range was encountered.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.DateRangeOverlapsExistingKey">
+            <summary>
+            Key for the message indicating a date range overlaps with an existing date range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CannotModifyActiveEntityKey">
+            <summary>
+            Key for the message indicating an active entity cannot be modified.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CellProcessingErrorKey">
+            <summary>
+            Key for the message indicating there was an error processing a cell during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.RequiredFieldKey">
+            <summary>
+            Key for the message indicating a required field is missing during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.NoAccompanyingItemFoundKey">
+            <summary>
+            Key for the message indicating no accompanying item was found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ColumnNotFoundKey">
+            <summary>
+            Key for the message indicating a specified column was not found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.WrongColumnInFileKey">
+            <summary>
+            Key for the message indicating an incorrect column was found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ImportWarningNoDataImportedKey">
+            <summary>
+            Key for the import warning message when no data was imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ImportWarningSomeDataNotImportedKey">
+            <summary>
+            Key for the import warning message when some data was not imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CastMessageGenericKey">
+            <summary>
+            Key for the message indicating a generic cast failure.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CastMessageDateKey">
+            <summary>
+            Key for the message indicating a date cast failure.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.CastMessageBoolKey">
+            <summary>
+            Key for the message indicating a boolean cast failure.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageNullNotAllowedKey">
+            <summary>
+            Key for the message indicating that a null value is not allowed.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageInvalidNumericRangeKey">
+            <summary>
+            Key for the message indicating that a numeric value is outside the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageInvalidStringTypeKey">
+            <summary>
+            Key for the message indicating that a string value is of an invalid type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageInvalidStringLengthKey">
+            <summary>
+            Key for the message indicating that a string's length is outside the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageInvalidDecimalTypeKey">
+            <summary>
+            Key for the message indicating that a decimal value is of an invalid type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Configuration.TabularFileImportMessageOptions.ValidationMessageInvalidDecimalPrecisionScaleKey">
+            <summary>
+            Key for the message indicating that a decimal value has invalid precision or scale.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.ImportModel">
+            <summary>
+            Base class for import models that generate unique keys based on composite properties.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.ImportModel.Key">
+            <summary>
+            The generated unique key for the model instance.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.ImportModel.LookupKey">
+            <summary>
+            The generated lookup key for the model instance.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.ImportModel.KeyHeaderNames">
+            <summary>
+            The header names used in key generation.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.ImportModel.RowIndex">
+            <summary>
+            The row index associated with the model instance, if applicable.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.GenerateKeys(System.Nullable{System.Int32})">
+            <summary>
+            Generates the unique key and lookup key for the model instance based on composite key properties.
+            </summary>
+            <param name="rowIndex"></param>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.ToString">
+            <summary>
+            Returns a string representation of the model by concatenating all public property values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileCell">
+            <summary>
+            Represents a cell in a tabular file with its value and position.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCell.CellValue">
+            <summary>
+            The value contained in the cell.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCell.ColumnIndex">
+            <summary>
+            The zero-based index of the column where the cell is located.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCell.RowIndex">
+            <summary>
+            The zero-based index of the row where the cell is located.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCell.SheetName">
+            <summary>
+            The name of the sheet containing the cell, if applicable.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileCellData">
+            <summary>
+            Represents data about a cell in a tabular file, including its column name, index, and value.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCellData.ColumnName">
+            <summary>
+            The name of the column where the cell is located.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCellData.ColumnIndex">
+            <summary>
+            The zero-based index of the column where the cell is located.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileCellData.CellValue">
+            <summary>
+            The value contained in the cell.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileColumnData">
+            <summary>
+            Represents data about a column in a tabular file, including its target entity property, object property type, and associated cell data.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnData.ObjectPropertyType">
+            <summary>
+            The type of the object property that this column maps to.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnData.TargetEntityProperty">
+            <summary>
+            The name of the target entity property that this column maps to.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnData.CellData">
+            <summary>
+            The data of the cell associated with this column.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileColumnMapping">
+            <summary>
+            Represents the mapping configuration for a column in a tabular file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.CellTypes">
+            <summary>
+            The set of acceptable cell types for this column.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.ColumnData">
+            <summary>
+            The data associated with this column.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.CustomCast">
+            <summary>
+            Custom casting logic for converting cell values to the desired type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.CustomValidators">
+            <summary>
+            Custom validation logic for validating cell values.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.Stringifier">
+            <summary>
+            Custom stringification logic for converting cell values to strings.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.FoundInFile">
+            <summary>
+            Indicates whether the column was found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileColumnMapping.OriginalHeaderName">
+            <summary>
+            The original header name of the column as found in the file.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileExportResult">
+            <summary>
+            Represents the result of a tabular file export operation, including success status and any warnings.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileExportResult.IsSuccess">
+            <summary>
+            Indicates whether the export operation was successful.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileExportResult.Warnings">
+            <summary>
+            The list of warnings generated during the export operation.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileImportHeaderCell">
+            <summary>
+            Represents a header cell in a tabular file import, including its formatted value and associated column mapping.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportHeaderCell.FormatedValue">
+            <summary>
+            The formatted value of the header cell.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportHeaderCell.ColumnMapping">
+            <summary>
+            The column mapping associated with this header cell.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileImportMessage">
+            <summary>
+            Message class for tabular file import-related messages.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.TranslationKey">
+            <summary>
+            The translation key for the message.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.SheetName">
+            <summary>
+            The name of the sheet where the message is relevant.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.RowIndex">
+            <summary>
+            The index of the row where the message is relevant.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.ColumnName">
+            <summary>
+            The name of the column where the message is relevant.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.CellValue">
+            <summary>
+            The value of the cell where the message is relevant.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportMessage.Column">
+            <summary>
+            The column e.g. "A0" where the message is relevant.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.TabularFileImportMessage.#ctor(MessageKit.Utility.Builders.MessageBuilder,MessageKit.Configuration.Interfaces.IMessageConfiguration,System.String,System.String,System.Nullable{System.Int32},Tabella.Data.Core.TabularFileCellData,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tabella.Data.Core.TabularFileImportMessage"/> class.
+            </summary>
+            <param name="messageBuilder"></param>
+            <param name="messageConfiguration"></param>
+            <param name="sender"></param>
+            <param name="sheetName"></param>
+            <param name="rowIndex"></param>
+            <param name="cellData"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+        </member>
+        <member name="M:Tabella.Data.Core.TabularFileImportMessage.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileImportModel">
+            <summary>
+            Represents the import model for a tabular file, including sheet name and column data.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportModel.SheetName">
+            <summary>
+            The name of the sheet from which the data was imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportModel.ColumnData">
+            <summary>
+            The dictionary containing column data, keyed by column names.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.TabularFileImportModel.SetCellInfo(Tabella.Data.Core.TabularFileProcessedObject)">
+            <summary>
+            Sets the cell information based on the provided processed object.
+            </summary>
+            <param name="processedObject"></param>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileImportPostProcessingResult`2">
+            <summary>
+            Represents the result of post-processing after importing tabular file data.
+            </summary>
+            <typeparam name="TAppItem"></typeparam>
+            <typeparam name="TImportModel"></typeparam>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.ExistingDbEntities">
+            <summary>
+            The list of existing database entities matched with their corresponding imported models.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.CreatingEntities">
+            <summary>
+            The list of entities to be created, each paired with its corresponding imported model.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.UpdatingEntities">
+            <summary>
+            The list of entities to be updated, each paired with its corresponding imported model.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.ImportedModels">
+            <summary>
+            The list of all imported models.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.PendingImportModels">
+            <summary>
+            The list of pending import models along with their associated application items, processed objects, and action types.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.CombinedEntities">
+            <summary>
+            The combined list of entities after merging existing, updating, and creating entities.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.TabularFileImportPostProcessingResult`2.GenerateCombinedEntities">
+            <summary>
+            Generates the combined list of entities by merging existing, updating, and creating entities.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileImportResult">
+            <summary>
+            Represents the result of a tabular file import operation, including processed objects and messages.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportResult.ProcessedObjects">
+            <summary>
+            The dictionary of processed objects, keyed by their type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileImportResult.Messages">
+            <summary>
+            The set of messages generated during the import operation.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileProcessedObject">
+            <summary>
+            Represents a processed object from a tabular file, including its associated sheet name, row index, and column data.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileProcessedObject.Object">
+            <summary>
+            The processed object extracted from the tabular file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileProcessedObject.SheetName">
+            <summary>
+            The name of the sheet from which the object was processed.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileProcessedObject.RowIndex">
+            <summary>
+            The index of the row from which the object was processed.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileProcessedObject.ColumnData">
+            <summary>
+            The dictionary containing column data, keyed by column names.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Core.TabularFileSheetMapping">
+            <summary>
+            Represents the mapping of a sheet in a tabular file to an entity type and its column mappings.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileSheetMapping.EntityType">
+            <summary>
+            The entity type associated with this sheet mapping.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileSheetMapping.ColumnMappings">
+            <summary>
+            The dictionary of column mappings for this sheet, keyed by column names.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileSheetMapping.FoundInFile">
+            <summary>
+            Indicates whether the sheet was found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Core.TabularFileSheetMapping.OriginalSheetName">
+            <summary>
+            The original name of the sheet in the tabular file.
+            </summary>
+        </member>
+        <member name="T:Tabella.Data.Interfaces.IAppItemToImportModel`1">
+            <summary>
+            Interface for app items, providing a method to convert to an import model.
+            </summary>
+            <typeparam name="TImportModel"></typeparam>
+        </member>
+        <member name="M:Tabella.Data.Interfaces.IAppItemToImportModel`1.ToImportModel">
+            <summary>
+            Method that converts the app item to an import model.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Interfaces.IImportModel`1">
+            <summary>
+            Interface for import models, providing a method to convert to an app item.
+            </summary>
+            <typeparam name="TAppItem"></typeparam>
+        </member>
+        <member name="M:Tabella.Data.Interfaces.IImportModel`1.ToAppItem">
+            <summary>
+            Method that converts the import model to an app item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Results.CustomCastResult">
+            <summary>
+            Result of a custom casting operation.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.CustomCastResult.CastedValue">
+            <summary>
+            The value after casting.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.CustomCastResult.IsValid">
+            <summary>
+            Indicates whether the casting was successful.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.CustomCastResult.Message">
+            <summary>
+            Message providing details about the casting result.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Results.CustomCastResult.Success(System.Object)">
+            <summary>
+            Creates a successful casting result.
+            </summary>
+            <param name="castedValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Data.Results.CustomCastResult.Failure(MessageKit.Utility.Builders.MessageBuilder)">
+            <summary>
+            Creates a failed casting result.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Results.CustomValidationResult">
+            <summary>
+            Result of a custom validation operation.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.CustomValidationResult.IsValid">
+            <summary>
+            Indicates whether the validation was successful.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.CustomValidationResult.Message">
+            <summary>
+            Message providing details about the validation result.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Results.CustomValidationResult.Success">
+            <summary>
+            Creates a successful validation result.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Data.Results.CustomValidationResult.Failure(MessageKit.Utility.Builders.MessageBuilder)">
+            <summary>
+            Creates a failed validation result.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Data.Results.StringifierResult">
+            <summary>
+            Result of a stringification operation.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.StringifierResult.StringValue">
+            <summary>
+            The resulting string value if the operation was successful; otherwise, null.
+            </summary>
+        </member>
+        <member name="P:Tabella.Data.Results.StringifierResult.IsValid">
+            <summary>
+            Indicates whether the stringification was successful.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Results.StringifierResult.Success(System.String)">
+            <summary>
+            Creates a successful stringification result.
+            </summary>
+            <param name="stringValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Data.Results.StringifierResult.Failure">
+            <summary>
+            Creates a failed stringification result.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Enums.ActionTypeEnum">
+            <summary>
+            Enum representing different types of actions.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ActionTypeEnum.Create">
+            <summary>
+            Represents a "create" action.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ActionTypeEnum.Update">
+            <summary>
+            Represents an "update" action.
+            </summary>
+        </member>
+        <member name="T:Tabella.Enums.ExcelStyleFormatsEnum">
+            <summary>
+            Enum representing various Excel style formats.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.General">
+            <summary>
+            General format (default).
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Number">
+            <summary>
+            Number format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Accounting">
+            <summary>
+            Accounting format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.DateShort">
+            <summary>
+            Date format (short).
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.DateLong">
+            <summary>
+            Date format (long).
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Numeric">
+            <summary>
+            Numeric format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Percentage">
+            <summary>
+            Percentage format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Fraction">
+            <summary>
+            Fraction format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Scientific">
+            <summary>
+            Scientific format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Text">
+            <summary>
+            Text format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.DateTime">
+            <summary>
+            Date and time format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.PhoneNumber">
+            <summary>
+            Time format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.PostalCode">
+            <summary>
+            Postal code format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.ZipCode">
+            <summary>
+            Zip code format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.HourMinSec">
+            <summary>
+            Hour, minute, second format.
+            </summary>
+        </member>
+        <member name="F:Tabella.Enums.ExcelStyleFormatsEnum.Custom">
+            <summary>
+            Custom format.
+            </summary>
+        </member>
+        <member name="T:Tabella.Services.Interfaces.ITabularFileProcessingService">
+            <summary>
+            Service interface for processing tabular files (e.g., Excel, CSV).
+            </summary>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ProcessSheetedFile(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Tabella.Data.Core.TabularFileSheetMapping}},System.Int32)">
+            <summary>
+            Processes a sheeted tabular file (e.g., Excel) from the provided stream using the specified sheet mappings.
+            </summary>
+            <param name="stream"></param>
+            <param name="sheetMappingsOrdered"></param>
+            <param name="headerRowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.GetFileImportPostProcessingResult``1(System.Type,System.Collections.Generic.Dictionary{System.Type,System.Object}@)">
+            <summary>
+            Retrieves the post-processing result of a specific type from the provided dictionary.
+            </summary>
+            <param name="type"></param>
+            <param name="postProcessingResults"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ExistingEntryCheck``2(``1,System.Collections.Generic.List{System.ValueTuple{``0,``1}},System.ValueTuple{``0,``1}@)">
+            <summary>
+            Checks for an existing entry in the provided existing entities map that matches the given object data.
+            </summary>
+            <param name="objectData"></param>
+            <param name="existingEntitiesMap"></param>
+            <param name="existingEntry"></param>
+            <typeparam name="TAppItem"></typeparam>
+            <typeparam name="TImportModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ValidateDuplicatesOnTabularFileImport(System.Collections.Generic.List{Tabella.Data.Core.TabularFileProcessedObject},System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates duplicate entries in the provided tabular file processed objects.
+            </summary>
+            <param name="data"></param>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ValidateDateRangeOnTabularFileImport(System.String,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}},Tabella.Data.Core.TabularFileProcessedObject,System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates a date range on a tabular file import.
+            </summary>
+            <param name="targetEntityProperty"></param>
+            <param name="dateRange"></param>
+            <param name="processedObject"></param>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ValidateAndRetrieveItemsInRangeOnTabularFileImport``2(System.UInt128,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}},System.String,Tabella.Data.Core.TabularFileImportPostProcessingResult{``0,``1}@,System.Func{``1,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}}},Tabella.Data.Core.TabularFileProcessedObject@,System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates and retrieves items within a specified date range on a tabular file import.
+            </summary>
+            <param name="lookupKey"></param>
+            <param name="itemRange"></param>
+            <param name="itemPropertyName"></param>
+            <param name="existingItems"></param>
+            <param name="dateRangeSelector"></param>
+            <param name="processedObject"></param>
+            <param name="messages"></param>
+            <typeparam name="TAppItem"></typeparam>
+            <typeparam name="TImportModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ValidateOverlappingDateRangesOnTabularFileImport``1(System.Collections.Generic.List{Tabella.Data.Core.TabularFileProcessedObject},System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@,System.Func{``0,System.String},System.Func{``0,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}}},System.String,System.Boolean)">
+            <summary>
+            Validates overlapping date ranges in the provided tabular file processed objects.
+            </summary>
+            <param name="data"></param>
+            <param name="messages"></param>
+            <param name="groupKeySelector"></param>
+            <param name="dateRangeSelector"></param>
+            <param name="startDatePropertyName"></param>
+            <param name="ignoreExactMatch"></param>
+            <typeparam name="TModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.Interfaces.ITabularFileProcessingService.ExportSheets(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Tabella.Data.Core.TabularFileSheetMapping}},System.Func{System.Type,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{System.Object}}},System.Threading.CancellationToken)">
+            <summary>
+            Exports data to a tabular file with multiple sheets based on the provided sheet mappings and data fetching function.
+            </summary>
+            <param name="outputStream"></param>
+            <param name="sheetMappingsOrdered"></param>
+            <param name="fetchEntitiesAsync"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Services.TabularFileProcessingService">
+            <summary>
+            Service for processing tabular files such as Excel spreadsheets.
+            </summary>
+            <param name="options"></param>
+            <param name="templates"></param>
+            <param name="messageFactory"></param>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.#ctor(Microsoft.Extensions.Options.IOptions{Tabella.Configuration.TabularFileImportMessageOptions},Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider,Tabella.Utility.Factories.Interfaces.ITabularFileImportMessageFactory)">
+            <summary>
+            Service for processing tabular files such as Excel spreadsheets.
+            </summary>
+            <param name="options"></param>
+            <param name="templates"></param>
+            <param name="messageFactory"></param>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ProcessSheetedFile(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Tabella.Data.Core.TabularFileSheetMapping}},System.Int32)">
+            <summary>
+            Processes a sheeted tabular file from the provided stream.
+            </summary>
+            <param name="stream"></param>
+            <param name="sheetMappingsOrdered"></param>
+            <param name="headerRowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.GetFileImportPostProcessingResult``1(System.Type,System.Collections.Generic.Dictionary{System.Type,System.Object}@)">
+            <summary>
+            Retrieves a post-processing result of the specified type from the provided dictionary.
+            </summary>
+            <param name="type"></param>
+            <param name="postProcessingResults"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ExistingEntryCheck``2(``1,System.Collections.Generic.List{System.ValueTuple{``0,``1}},System.ValueTuple{``0,``1}@)">
+            <summary>
+            Checks for an existing entry in the provided map based on the object's key.
+            </summary>
+            <param name="objectData"></param>
+            <param name="existingEntitiesMap"></param>
+            <param name="existingEntry"></param>
+            <typeparam name="TAppItem"></typeparam>
+            <typeparam name="TImportModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ValidateDuplicatesOnTabularFileImport(System.Collections.Generic.List{Tabella.Data.Core.TabularFileProcessedObject},System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates duplicate entries in the imported tabular file data.
+            </summary>
+            <param name="data"></param>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ValidateDateRangeOnTabularFileImport(System.String,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}},Tabella.Data.Core.TabularFileProcessedObject,System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates a date range on a tabular file import.
+            </summary>
+            <param name="targetEntityProperty"></param>
+            <param name="dateRange"></param>
+            <param name="processedObject"></param>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ValidateAndRetrieveItemsInRangeOnTabularFileImport``2(System.UInt128,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}},System.String,Tabella.Data.Core.TabularFileImportPostProcessingResult{``0,``1}@,System.Func{``1,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}}},Tabella.Data.Core.TabularFileProcessedObject@,System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@)">
+            <summary>
+            Validates and retrieves items within a specified date range on a tabular file import.
+            </summary>
+            <param name="lookupKey"></param>
+            <param name="itemRange"></param>
+            <param name="itemPropertyName"></param>
+            <param name="existingItems"></param>
+            <param name="dateRangeSelector"></param>
+            <param name="processedObject"></param>
+            <param name="messages"></param>
+            <typeparam name="TAppItem"></typeparam>
+            <typeparam name="TImportModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ValidateOverlappingDateRangesOnTabularFileImport``1(System.Collections.Generic.List{Tabella.Data.Core.TabularFileProcessedObject},System.Collections.Generic.HashSet{Tabella.Data.Core.TabularFileImportMessage}@,System.Func{``0,System.String},System.Func{``0,System.ValueTuple{System.DateTime,System.Nullable{System.DateTime}}},System.String,System.Boolean)">
+            <summary>
+            Validates overlapping date ranges in the provided tabular file processed objects.
+            </summary>
+            <param name="data"></param>
+            <param name="messages"></param>
+            <param name="groupKeySelector"></param>
+            <param name="dateRangeSelector"></param>
+            <param name="startDatePropertyName"></param>
+            <param name="ignoreExactMatch"></param>
+            <typeparam name="TModel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Services.TabularFileProcessingService.ExportSheets(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Tabella.Data.Core.TabularFileSheetMapping}},System.Func{System.Type,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{System.Object}}},System.Threading.CancellationToken)">
+            <summary>
+            Exports sheets to a tabular file format.
+            </summary>
+            <param name="outputStream"></param>
+            <param name="sheetMappingsOrdered"></param>
+            <param name="fetchEntitiesAsync"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.TabularFileImportMessageServiceCollectionExtensions">
+            <summary>
+            Extension methods for registering tabular file import message services.
+            </summary>
+        </member>
+        <member name="M:Tabella.TabularFileImportMessageServiceCollectionExtensions.AddTabularFileImportMessages(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Tabella.Configuration.TabularFileImportMessageOptions},System.Action{MessageKit.MessageOptions})">
+            <summary>
+            Registers services for tabular file import messages.
+            </summary>
+            <param name="services"></param>
+            <param name="configure"></param>
+            <param name="configureMessageOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Attributes.CompositeKeyPartAttribute">
+            <summary>
+            Attribute to mark a property as part of a composite key.
+            </summary>
+            <param name="headerName"></param>
+            <param name="excludeFromLookupKey"></param>
+        </member>
+        <member name="M:Tabella.Utility.Attributes.CompositeKeyPartAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Attribute to mark a property as part of a composite key.
+            </summary>
+            <param name="headerName"></param>
+            <param name="excludeFromLookupKey"></param>
+        </member>
+        <member name="P:Tabella.Utility.Attributes.CompositeKeyPartAttribute.HeaderName">
+            <summary>
+            The name of the header associated with this key part.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Attributes.CompositeKeyPartAttribute.ExcludeFromLookupKey">
+            <summary>
+            Indicates whether this key part should be excluded from lookup keys.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute">
+            <summary>
+            Attribute to mark a property as part of a composite lookup key.
+            </summary>
+            <param name="targetPropertyName"></param>
+        </member>
+        <member name="M:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.#ctor(System.String)">
+            <summary>
+            Attribute to mark a property as part of a composite lookup key.
+            </summary>
+            <param name="targetPropertyName"></param>
+        </member>
+        <member name="P:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.TargetPropertyName">
+            <summary>
+            The name of the target property associated with this lookup key part.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Delegates.CustomCastDelegate">
+            <summary>
+            Delegate for custom casting logic.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Delegates.CustomValidatorDelegate">
+            <summary>
+            Delegate for custom validation logic.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Delegates.StringifierDelegate">
+            <summary>
+            Delegate for custom stringification logic.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Factories.Interfaces.ITabularFileImportMessageFactory">
+            <summary>
+            Factory interface for creating message instances.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Factories.Interfaces.ITabularFileImportMessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,System.String,System.Nullable{System.Int32},Tabella.Data.Core.TabularFileCellData,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Creates a new TabularFileImportMessage instance using the provided parameters.
+            </summary>
+            <param name="messageBuilder"></param>
+            <param name="sender"></param>
+            <param name="sheetName"></param>
+            <param name="rowIndex"></param>
+            <param name="cellData"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Factories.TabularFileImportMessageFactory">
+            <summary>
+            Factory class for creating Message instances.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Factories.TabularFileImportMessageFactory.#ctor(MessageKit.Configuration.Interfaces.IMessageConfiguration,Microsoft.Extensions.Options.IOptions{Tabella.Configuration.TabularFileImportMessageOptions})">
+            <summary>
+            Factory class for creating Message instances.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Factories.TabularFileImportMessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,System.String,System.Nullable{System.Int32},Tabella.Data.Core.TabularFileCellData,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Creates a new TabularFileImportMessage instance using the provided parameters.
+            </summary>
+            <param name="messageBuilder"></param>
+            <param name="sender"></param>
+            <param name="sheetName"></param>
+            <param name="rowIndex"></param>
+            <param name="cellData"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Helpers.CustomCasts">
+            <summary>
+            Custom casting operations class
+            </summary>
+            <param name="templates"></param>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.#ctor(Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider)">
+            <summary>
+            Custom casting operations class
+            </summary>
+            <param name="templates"></param>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToMinHoursDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object with minimum hours (00:00:00).
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToMaxHoursDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object with maximum hours (23:59:59).
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToBool(System.Object)">
+            <summary>
+            Casts the input to a boolean value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToInt(System.Object)">
+            <summary>
+            Casts the input to an integer value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToDecimal(System.Object)">
+            <summary>
+            Casts the input to a decimal value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToString(System.Object)">
+            <summary>
+            Casts the input to a string value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomCasts.ToNullableString(System.Object)">
+            <summary>
+            Casts the input to a string value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Helpers.CustomFormatters">
+            <summary>
+            Custom formatters for data processing.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomFormatters.ToCleanString(System.Object)">
+            <summary>
+            Cleans the input string by removing non-alphanumeric characters,
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomFormatters.ToNumericString(System.Object,System.Boolean)">
+            <summary>
+            Converts the input to a numeric string, optionally allowing decimal points.
+            </summary>
+            <param name="input"></param>
+            <param name="allowDecimals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomFormatters.ToPaddedNumericString(System.Object,System.Int32,System.Char,System.Boolean)">
+            <summary>
+            Converts the input to a padded numeric string.
+            </summary>
+            <param name="input"></param>
+            <param name="totalLength"></param>
+            <param name="paddingChar"></param>
+            <param name="minLengthOnly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Helpers.CustomValidators">
+            <summary>
+            Custom validation operations class
+            </summary>
+            <param name="templates"></param>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomValidators.#ctor(Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider)">
+            <summary>
+            Custom validation operations class
+            </summary>
+            <param name="templates"></param>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomValidators.NumericRangeValidator(System.Double,System.Double,System.Boolean)">
+            <summary>
+            Validates that the input is a numeric value within the specified range.
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomValidators.StringLengthValidator(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Validates that the input string's length is within the specified range.
+            </summary>
+            <param name="minLength"></param>
+            <param name="maxLength"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.CustomValidators.DecimalPrecisionScaleValidator(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Validates that the input decimal value conforms to the specified precision and scale.
+            </summary>
+            <param name="precision"></param>
+            <param name="scale"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Helpers.Interfaces.ICustomCasts">
+            <summary>
+            Interface for custom casting methods.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToMinHoursDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object with minimum hours (00:00:00).
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToMaxHoursDate(System.Object)">
+            <summary>
+            Casts the input to a DateTime object with maximum hours (23:59:59).
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToBool(System.Object)">
+            <summary>
+            Casts the input to a boolean value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToInt(System.Object)">
+            <summary>
+            Casts the input to an integer value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToDecimal(System.Object)">
+            <summary>
+            Casts the input to a decimal value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToString(System.Object)">
+            <summary>
+            Casts the input to a string value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToNullableString(System.Object)">
+            <summary>
+            Casts the input to a nullable string value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Helpers.Interfaces.ICustomValidators">
+            <summary>
+            Interface for custom validation methods.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.NumericRangeValidator(System.Double,System.Double,System.Boolean)">
+            <summary>
+            Numeric range validator.
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.StringLengthValidator(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            String length validator.
+            </summary>
+            <param name="minLength"></param>
+            <param name="maxLength"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.DecimalPrecisionScaleValidator(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Decimal precision and scale validator.
+            </summary>
+            <param name="precision"></param>
+            <param name="scale"></param>
+            <param name="allowNullValues"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider">
+            <summary>
+            Interface for providing Tabella-specific message templates.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.NoWorksheetsFound">
+            <summary>
+            Message template for when no worksheets are found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.WorksheetNotFound">
+            <summary>
+            Message template for when a specified worksheet is not found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.HeaderNotFoundAtIndex">
+            <summary>
+            Message template for when a header is not found at the expected index in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CannotDeleteEntity">
+            <summary>
+            Message template for when a required entity cannot be deleted because it is in use.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.DuplicateEntry">
+            <summary>
+            Message template for when a duplicate entry is found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.InvalidDateRange">
+            <summary>
+            Message template for when an invalid date range is encountered.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.DateRangeOverlapsExisting">
+            <summary>
+            Message template for when a date range overlaps with an existing date range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CannotModifyActiveEntity">
+            <summary>
+            Message template for when an active entity cannot be modified.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CellProcessingError">
+            <summary>
+            Message template for when there is an error processing a cell during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.RequiredField">
+            <summary>
+            Message template for when a required field is missing during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.NoAccompanyingItemFound">
+            <summary>
+            Message template for when no accompanying item is found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ColumnNotFound">
+            <summary>
+            Message template for when a specified column is not found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.WrongColumnInFile">
+            <summary>
+            Message template for when an incorrect column is found in the imported file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ImportWarningNoDataImported">
+            <summary>
+            Message template for import warning when no data was imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ImportWarningSomeDataNotImported">
+            <summary>
+            Message template for import warning when some data was not imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CastMessageGeneric">
+            <summary>
+            Message template for when a generic cast fails.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CastMessageDate">
+            <summary>
+            Message template for when a date cast fails.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.CastMessageBool">
+            <summary>
+            Message template for when a boolean cast fails.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageNullNotAllowed">
+            <summary>
+            Message template for when a null value is not allowed.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageInvalidNumericRange">
+            <summary>
+            Message template for when a numeric value is out of the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageInvalidStringType">
+            <summary>
+            Message template for when a string's length is invalid.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageInvalidStringLength">
+            <summary>
+            Message template for when a string's length is outside the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageInvalidDecimalType">
+            <summary>
+            Message template for when a decimal value is of an invalid type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider.ValidationMessageInvalidDecimalPrecisionScale">
+            <summary>
+            Message template for when a decimal value has invalid precision or scale.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Providers.TabellaMessageTemplatesProvider">
+            <summary>
+            Provider for tabular file import message templates.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.NoWorksheetsFound">
+            <summary>
+            Message template for when no worksheets are found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.WorksheetNotFound">
+            <summary>
+            Message template for when a specified worksheet is not found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.HeaderNotFoundAtIndex">
+            <summary>
+            Message template for when a header is not found at the expected index.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CannotDeleteEntity">
+            <summary>
+            Message template for when a required entity cannot be deleted because it is in use.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.DuplicateEntry">
+            <summary>
+            Message template for when a duplicate entry is found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.InvalidDateRange">
+            <summary>
+            Message template for when an invalid date range is encountered.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.DateRangeOverlapsExisting">
+            <summary>
+            Message template for when a date range overlaps with an existing date range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CannotModifyActiveEntity">
+            <summary>
+            Message template for when an active entity cannot be modified.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CellProcessingError">
+            <summary>
+            Message template for when there is an error processing a cell during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.RequiredField">
+            <summary>
+            Message template for when a required field is missing during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.NoAccompanyingItemFound">
+            <summary>
+            Message template for when no accompanying item is found during import.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ColumnNotFound">
+            <summary>
+            Message template for when a specified column is not found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.WrongColumnInFile">
+            <summary>
+            Message template for when an incorrect column is found in the file.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ImportWarningNoDataImported">
+            <summary>
+            Message template for when no data is imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ImportWarningSomeDataNotImported">
+            <summary>
+            Message template for when some data is not imported.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CastMessageGeneric">
+            <summary>
+            Message template for generic casting errors.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CastMessageDate">
+            <summary>
+            Message template for date casting errors.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.CastMessageBool">
+            <summary>
+            Message template for boolean casting errors.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageNullNotAllowed">
+            <summary>
+            Message template for when a null value is not allowed.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageInvalidNumericRange">
+            <summary>
+            Message template for when a numeric value is outside the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageInvalidStringType">
+            <summary>
+            Message template for when a string value is of an invalid type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageInvalidStringLength">
+            <summary>
+            Message template for when a string's length is outside the allowed range.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageInvalidDecimalType">
+            <summary>
+            Message template for when a decimal value is of an invalid type.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.ValidationMessageInvalidDecimalPrecisionScale">
+            <summary>
+            Message template for when a decimal value has invalid precision or scale.
+            </summary>
+        </member>
+        <member name="M:Tabella.Utility.Providers.TabellaMessageTemplatesProvider.#ctor(Microsoft.Extensions.Options.IOptions{Tabella.Configuration.TabularFileImportMessageOptions})">
+            <summary>
+            Constructor for TabellaMessageTemplatesProvider
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:Tabella._Common.TabellaConstants">
+            <summary>
+            Contains constant values used throughout the Tabella application.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.ExcelSheetNameMaxCharacterCount">
+            <summary>
+            Maximum number of characters allowed in an Excel sheet name.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.DecimalFormat">
+            <summary>
+            Standard decimal format with up to 10 decimal places.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.DateFormat">
+            <summary>
+            Standard date format (dd-MM-yyyy).
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.DateTimeFormat">
+            <summary>
+            Standard date and time format (dd-MM-yyyy HH:mm:ss).
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.StringBoolTrue">
+            <summary>
+            Standard time format (HH:mm:ss).
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.StringBoolFalse">
+            <summary>
+            Standard string representation for boolean false.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.EmptyField">
+            <summary>
+            Representation of an empty field in imports/exports.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.NotAssigned">
+            <summary>
+            Representation of a not assigned value in imports/exports.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.CommaSeparator">
+            <summary>
+            Comma separator used in CSV files.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.SemicolonSeparator">
+            <summary>
+            Semicolon separator used in CSV files.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.SheetedFileImportedEntityValidatorSingleGroupingKey">
+            <summary>
+            Tab separator used in TSV files.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessageRangeNoEndSymbol">
+            <summary>
+            Symbol representing no end in a range.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderCastedValue">
+            <summary>
+            Placeholder for the value that was attempted to be cast.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderCurrentValue">
+            <summary>
+            Placeholder for the current value being processed.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderItemInformation">
+            <summary>
+            Placeholder for item information in messages.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderIndex">
+            <summary>
+            Placeholder for the index in messages.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderStartDate">
+            <summary>
+            Placeholder for the start date in messages.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.MessagePlaceholderEndDate">
+            <summary>
+            Placeholder for the end date in messages.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.ExcelBaseDate">
+            <summary>
+            The base date for Excel date calculations (January 1, 1900).
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.ExcelLeapYearBug">
+            <summary>
+            The number of days to adjust for the Excel leap year bug.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.OpenXmlStandardDateFormatIds">
+            <summary>
+            List of standard OpenXML date format IDs.
+            </summary>
+        </member>
+        <member name="F:Tabella._Common.TabellaConstants.OpenXmlDateFormats">
+            <summary>
+            List of recognized OpenXML date formats.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,14 @@
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.deps.json
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.dll
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.pdb
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.xml
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.csproj.AssemblyReference.cache
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.GeneratedMSBuildEditorConfig.editorconfig
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.AssemblyInfoInputs.cache
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.AssemblyInfo.cs
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.csproj.CoreCompileInputs.cache
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.dll
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/refint/Tabella.dll
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.xml
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/Tabella.pdb
+/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/obj/Release/net10.0/ref/Tabella.dll
