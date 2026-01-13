@@ -7,7 +7,7 @@ namespace Tabella.Utility.Helpers;
 /// <summary>
 /// Custom formatters for data processing.
 /// </summary>
-public class CustomFormatters
+public static class CustomFormatters
 {
     /// <summary>
     /// Cleans the input string by removing non-alphanumeric characters,

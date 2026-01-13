@@ -14,27 +14,27 @@ public class TabularFileImportPostProcessingResult<TAppItem, TImportModel>
     /// <summary>
     /// The list of existing database entities matched with their corresponding imported models.
     /// </summary>
-    public List<(TAppItem appItem, TImportModel importedModel)> ExistingDbEntities { get; } = [];
+    public List<(TAppItem appItem, TImportModel importedModel)> ExistingDbEntities { get; set; } = [];
     
     /// <summary>
     /// The list of entities to be created, each paired with its corresponding imported model.
     /// </summary>
-    public List<(TAppItem appItem, TImportModel importedModel)> CreatingEntities { get; } = [];
+    public List<(TAppItem appItem, TImportModel importedModel)> CreatingEntities { get; set; } = [];
     
     /// <summary>
     /// The list of entities to be updated, each paired with its corresponding imported model.
     /// </summary>
-    public List<(TAppItem appItem, TImportModel importedModel)> UpdatingEntities { get; } = [];
+    public List<(TAppItem appItem, TImportModel importedModel)> UpdatingEntities { get; set; } = [];
 
     /// <summary>
     /// The list of all imported models.
     /// </summary>
-    public List<TImportModel> ImportedModels { get; } = [];
+    public List<TImportModel> ImportedModels { get; set; } = [];
     
     /// <summary>
     /// The list of pending import models along with their associated application items, processed objects, and action types.
     /// </summary>
-    public List<(TAppItem? appItem, TImportModel importedModel, TabularFileProcessedObject processedObject, ActionTypeEnum action)> PendingImportModels { get; } = [];
+    public List<(TAppItem? appItem, TImportModel importedModel, TabularFileProcessedObject processedObject, ActionTypeEnum action)> PendingImportModels { get; set; } = [];
 
     /// <summary>
     /// The combined list of entities after merging existing, updating, and creating entities.

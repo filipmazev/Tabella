@@ -151,35 +151,68 @@
         </member>
         <member name="P:Tabella.Data.Core.ImportModel.Key">
             <summary>
-            The generated unique key for the model instance.
+            The generated unique key for this import model instance.
             </summary>
         </member>
         <member name="P:Tabella.Data.Core.ImportModel.LookupKey">
             <summary>
-            The generated lookup key for the model instance.
+            The generated lookup key for this import model instance.
             </summary>
         </member>
         <member name="P:Tabella.Data.Core.ImportModel.KeyHeaderNames">
             <summary>
-            The header names used in key generation.
+            The header names used to generate the key, if applicable.
             </summary>
         </member>
         <member name="P:Tabella.Data.Core.ImportModel.RowIndex">
             <summary>
-            The row index associated with the model instance, if applicable.
+            The row index from the source tabular data, if applicable.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.ToString">
+            <summary>
+            Concatenates all public property values for debugging purposes.
             </summary>
         </member>
         <member name="M:Tabella.Data.Core.ImportModel.GenerateKeys(System.Nullable{System.Int32})">
             <summary>
-            Generates the unique key and lookup key for the model instance based on composite key properties.
+            Generates all keys for this instance.
             </summary>
-            <param name="rowIndex"></param>
         </member>
-        <member name="M:Tabella.Data.Core.ImportModel.ToString">
+        <member name="M:Tabella.Data.Core.ImportModel.GetFilteredKeyProperties">
             <summary>
-            Returns a string representation of the model by concatenating all public property values.
+            Gets composite key properties that satisfy RequiredAttribute filtering per instance.
             </summary>
-            <returns></returns>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.GetLookupKeyProperties">
+            <summary>
+            Gets lookup key property groups for this type.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.GetOwnProperties">
+            <summary>
+            Gets public instance properties declared on the derived class (not ImportModel).
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.SetLookupKeyValue(System.String,System.Nullable{System.UInt128})">
+            <summary>
+            Sets the lookup key property value on this instance.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.GenerateHash(System.String[])">
+            <summary>
+            Computes a UInt128 hash from string array input.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.GenerateRandomUInt128">
+            <summary>
+            Generates a cryptographically random UInt128 value.
+            </summary>
+        </member>
+        <member name="M:Tabella.Data.Core.ImportModel.FormatValue(System.Object)">
+            <summary>
+            Formats various common types for key string generation.
+            </summary>
         </member>
         <member name="T:Tabella.Data.Core.TabularFileCell">
             <summary>
@@ -924,13 +957,20 @@
             </summary>
             <param name="headerName"></param>
             <param name="excludeFromLookupKey"></param>
+            <param name="partId">Optional identifier for the key part. If not provided, defaults to the header name.</param>
         </member>
-        <member name="M:Tabella.Utility.Attributes.CompositeKeyPartAttribute.#ctor(System.String,System.Boolean)">
+        <member name="M:Tabella.Utility.Attributes.CompositeKeyPartAttribute.#ctor(System.String,System.Boolean,System.String)">
             <summary>
             Attribute to mark a property as part of a composite key.
             </summary>
             <param name="headerName"></param>
             <param name="excludeFromLookupKey"></param>
+            <param name="partId">Optional identifier for the key part. If not provided, defaults to the header name.</param>
+        </member>
+        <member name="P:Tabella.Utility.Attributes.CompositeKeyPartAttribute.PartId">
+            <summary>
+            The identifier for the key part.
+            </summary>
         </member>
         <member name="P:Tabella.Utility.Attributes.CompositeKeyPartAttribute.HeaderName">
             <summary>
@@ -947,16 +987,79 @@
             Attribute to mark a property as part of a composite lookup key.
             </summary>
             <param name="targetPropertyName"></param>
+            <param name="partId">The name of the header (in the original table) associated with this key part.</param>
         </member>
-        <member name="M:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.#ctor(System.String)">
+        <member name="M:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.#ctor(System.String,System.String)">
             <summary>
             Attribute to mark a property as part of a composite lookup key.
             </summary>
             <param name="targetPropertyName"></param>
+            <param name="partId">The name of the header (in the original table) associated with this key part.</param>
+        </member>
+        <member name="P:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.PartId">
+            <summary>
+            The identifier for the key part.
+            </summary>
         </member>
         <member name="P:Tabella.Utility.Attributes.LookupCompositeKeyPartAttribute.TargetPropertyName">
             <summary>
             The name of the target property associated with this lookup key part.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Contexts.CustomCastContextAccessor">
+            <summary>
+            Accessor for the current CustomCastContext.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Contexts.CustomCastContextAccessor.Current">
+            <summary>
+            Gets the current CustomCastContext.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Tabella.Utility.Contexts.CustomCastContextAccessor.Use(Tabella.Utility.Contexts.Interfaces.ICustomCastContext)">
+            <summary>
+            Sets the current CustomCastContext for the scope of the returned IDisposable.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Contexts.CustomValidatorContextAccessor">
+            <summary>
+            Accessor for the current CustomValidatorContext.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Contexts.CustomValidatorContextAccessor.Current">
+            <summary>
+            Gets the current CustomValidatorContext.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Tabella.Utility.Contexts.CustomValidatorContextAccessor.Use(Tabella.Utility.Contexts.Interfaces.ICustomValidatorContext)">
+            <summary>
+            Sets the current CustomValidatorContext for the scope of the returned IDisposable.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tabella.Utility.Contexts.Interfaces.ICustomCastContext">
+            <summary>
+            Interface for custom cast context.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Contexts.Interfaces.ICustomCastContext.Templates">
+            <summary>
+            Gets the templates provider for Tabella messages.
+            </summary>
+        </member>
+        <member name="T:Tabella.Utility.Contexts.Interfaces.ICustomValidatorContext">
+            <summary>
+            Interface for custom validator context.
+            </summary>
+        </member>
+        <member name="P:Tabella.Utility.Contexts.Interfaces.ICustomValidatorContext.Templates">
+            <summary>
+            Gets the templates provider for Tabella messages.
             </summary>
         </member>
         <member name="T:Tabella.Utility.Delegates.CustomCastDelegate">
@@ -1021,13 +1124,6 @@
             <summary>
             Custom casting operations class
             </summary>
-            <param name="templates"></param>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.CustomCasts.#ctor(Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider)">
-            <summary>
-            Custom casting operations class
-            </summary>
-            <param name="templates"></param>
         </member>
         <member name="M:Tabella.Utility.Helpers.CustomCasts.ToDate(System.Object)">
             <summary>
@@ -1119,13 +1215,6 @@
             <summary>
             Custom validation operations class
             </summary>
-            <param name="templates"></param>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.CustomValidators.#ctor(Tabella.Utility.Providers.Interfaces.ITabellaMessageTemplatesProvider)">
-            <summary>
-            Custom validation operations class
-            </summary>
-            <param name="templates"></param>
         </member>
         <member name="M:Tabella.Utility.Helpers.CustomValidators.NumericRangeValidator(System.Double,System.Double,System.Boolean)">
             <summary>
@@ -1154,96 +1243,15 @@
             <param name="allowNullValues"></param>
             <returns></returns>
         </member>
-        <member name="T:Tabella.Utility.Helpers.Interfaces.ICustomCasts">
+        <member name="T:Tabella.Utility.Helpers.Stringifiers">
             <summary>
-            Interface for custom casting methods.
+            Custom validation operations class
             </summary>
         </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToDate(System.Object)">
+        <member name="M:Tabella.Utility.Helpers.Stringifiers.FromString(System.Boolean)">
             <summary>
-            Casts the input to a DateTime object.
+            Creates a stringifier that converts any object to its string representation.
             </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToMinHoursDate(System.Object)">
-            <summary>
-            Casts the input to a DateTime object with minimum hours (00:00:00).
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToMaxHoursDate(System.Object)">
-            <summary>
-            Casts the input to a DateTime object with maximum hours (23:59:59).
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToBool(System.Object)">
-            <summary>
-            Casts the input to a boolean value.
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToInt(System.Object)">
-            <summary>
-            Casts the input to an integer value.
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToDecimal(System.Object)">
-            <summary>
-            Casts the input to a decimal value.
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToString(System.Object)">
-            <summary>
-            Casts the input to a string value.
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomCasts.ToNullableString(System.Object)">
-            <summary>
-            Casts the input to a nullable string value.
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Tabella.Utility.Helpers.Interfaces.ICustomValidators">
-            <summary>
-            Interface for custom validation methods.
-            </summary>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.NumericRangeValidator(System.Double,System.Double,System.Boolean)">
-            <summary>
-            Numeric range validator.
-            </summary>
-            <param name="min"></param>
-            <param name="max"></param>
-            <param name="allowNullValues"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.StringLengthValidator(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
-            <summary>
-            String length validator.
-            </summary>
-            <param name="minLength"></param>
-            <param name="maxLength"></param>
-            <param name="allowNullValues"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tabella.Utility.Helpers.Interfaces.ICustomValidators.DecimalPrecisionScaleValidator(System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Decimal precision and scale validator.
-            </summary>
-            <param name="precision"></param>
-            <param name="scale"></param>
             <param name="allowNullValues"></param>
             <returns></returns>
         </member>

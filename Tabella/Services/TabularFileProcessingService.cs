@@ -2,13 +2,14 @@ using Tabella.Utility.Factories.Interfaces;
 using Tabella.Utility.Providers.Interfaces;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Packaging;
+using Microsoft.Extensions.Options;
 using Tabella.Services.Interfaces;
 using MessageKit.Utility.Builders;
+using Tabella.Utility.Contexts;
 using DocumentFormat.OpenXml;
-using Microsoft.Extensions.Options;
+using Tabella.Configuration;
 using Tabella.Data.Core;
 using Tabella._Common;
-using Tabella.Configuration;
 
 namespace Tabella.Services;
 
@@ -42,6 +43,9 @@ public partial class TabularFileProcessingService(
     {
         using SpreadsheetDocument spreadsheet = SpreadsheetDocument.Open(stream, false);
         WorkbookPart? workbookPart = spreadsheet.WorkbookPart;
+        
+        using IDisposable customCastContext = CustomCastContextAccessor.Use(new CustomCastContext(templates));
+        using IDisposable customValidatorContext = CustomValidatorContextAccessor.Use(new CustomValidatorContext(templates));
 
         if(workbookPart is null) return null;
 

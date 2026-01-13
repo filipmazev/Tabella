@@ -1,6 +1,6 @@
 using Tabella.Utility.Providers.Interfaces;
-using Tabella.Utility.Helpers.Interfaces;
 using MessageKit.Utility.Builders;
+using Tabella.Utility.Contexts;
 using Tabella.Data.Results;
 using System.Globalization;
 using Tabella._Common;
@@ -10,23 +10,22 @@ namespace Tabella.Utility.Helpers;
 /// <summary>
 /// Custom casting operations class
 /// </summary>
-/// <param name="templates"></param>
-public class CustomCasts(
-    ITabellaMessageTemplatesProvider templates
-    ) : ICustomCasts
+public static partial class CustomCasts
 {
+    private static ITabellaMessageTemplatesProvider Templates => CustomCastContextAccessor.Current.Templates;
+
     /// <summary>
     /// Casts the input to a DateTime object.
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToDate(object? input)
+    public static CustomCastResult ToDate(object? input)
     {
         if(input is DateTime dateTimeValue) return CustomCastResult.Success(dateTimeValue);
 
         if(input is not string stringValue)
         {
-            return CustomCastResult.Failure(new MessageBuilder(templates.CastMessageDate)
+            return CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageDate)
                 .With(TabellaConstants.MessagePlaceholderCastedValue, input?.ToString() ?? string.Empty));
         }
 
@@ -42,7 +41,7 @@ public class CustomCasts(
             return CustomCastResult.Success(null);
         }
 
-        return CustomCastResult.Failure(new MessageBuilder(templates.CastMessageDate)
+        return CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageDate)
             .With(TabellaConstants.MessagePlaceholderCastedValue, input.ToString() ?? string.Empty));
     }
 
@@ -51,7 +50,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToMinHoursDate(object? input)
+    public static CustomCastResult ToMinHoursDate(object? input)
     {
         CustomCastResult toDateCast = ToDate(input);
         if(!toDateCast.IsValid || toDateCast.CastedValue is not DateTime dateValue) return toDateCast;
@@ -64,7 +63,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToMaxHoursDate(object? input)
+    public static CustomCastResult ToMaxHoursDate(object? input)
     {
         CustomCastResult toDateCast = ToDate(input);
         if(!toDateCast.IsValid || toDateCast.CastedValue is not DateTime dateValue) return toDateCast;
@@ -77,7 +76,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToBool(object? input)
+    public static CustomCastResult ToBool(object? input)
     {
         return input switch
         {
@@ -96,10 +95,10 @@ public class CustomCasts(
             {
                 "true" => CustomCastResult.Success(true),
                 "false" => CustomCastResult.Success(false),
-                _ => CustomCastResult.Failure(new MessageBuilder(templates.CastMessageBool)
+                _ => CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageBool)
                     .With(TabellaConstants.MessagePlaceholderCastedValue, input.ToString() ?? string.Empty))
             },
-            _ => CustomCastResult.Failure(new MessageBuilder(templates.CastMessageBool)
+            _ => CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageBool)
                     .With(TabellaConstants.MessagePlaceholderCastedValue, input?.ToString() ?? string.Empty))
         };
     }
@@ -109,7 +108,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToInt(object? input)
+    public static CustomCastResult ToInt(object? input)
     {
         return input switch
         {
@@ -123,7 +122,7 @@ public class CustomCasts(
                                     || CustomFormatters.ToCleanString(stringValue).Equals(TabellaConstants.EmptyField)
                                     || CustomFormatters.ToCleanString(stringValue).Equals(TabellaConstants.NotAssigned) =>
                 CustomCastResult.Success(null),
-            _ => CustomCastResult.Failure(new MessageBuilder(templates.CastMessageGeneric)
+            _ => CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageGeneric)
                     .With(TabellaConstants.MessagePlaceholderCastedValue, input?.ToString() ?? string.Empty))
         };
     }
@@ -133,7 +132,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToDecimal(object? input)
+    public static CustomCastResult ToDecimal(object? input)
     {
         return input switch
         {
@@ -147,7 +146,7 @@ public class CustomCasts(
                                     || CustomFormatters.ToCleanString(stringValue).Equals(TabellaConstants.EmptyField)
                                     || CustomFormatters.ToCleanString(stringValue).Equals(TabellaConstants.NotAssigned) =>
                 CustomCastResult.Success(null),
-            _ => CustomCastResult.Failure(new MessageBuilder(templates.CastMessageGeneric)
+            _ => CustomCastResult.Failure(new MessageBuilder(Templates.CastMessageGeneric)
                     .With(TabellaConstants.MessagePlaceholderCastedValue, input?.ToString() ?? string.Empty))
         };
     }
@@ -157,7 +156,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToString(object? input)
+    public static CustomCastResult ToString(object? input)
     {
         if(input is not string stringValue) return CustomCastResult.Success(input?.ToString() ?? string.Empty);
 
@@ -171,7 +170,7 @@ public class CustomCasts(
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public CustomCastResult ToNullableString(object? input)
+    public static CustomCastResult ToNullableString(object? input)
     {
         if(input is not string stringValue) return CustomCastResult.Success(input?.ToString());
 

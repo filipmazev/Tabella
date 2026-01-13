@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "Tabella/1.0.3": {
+      "Tabella/1.0.11": {
         "dependencies": {
           "DocumentFormat.OpenXml": "3.3.0",
           "MessageKit": "1.0.2"
@@ -88,7 +88,7 @@
     }
   },
   "libraries": {
-    "Tabella/1.0.3": {
+    "Tabella/1.0.11": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,7 +1,7 @@
 using Tabella.Utility.Providers.Interfaces;
-using Tabella.Utility.Helpers.Interfaces;
 using MessageKit.Utility.Builders;
 using Tabella.Utility.Delegates;
+using Tabella.Utility.Contexts;
 using System.Globalization;
 using Tabella.Data.Results;
 using Tabella._Common;
@@ -11,11 +11,10 @@ namespace Tabella.Utility.Helpers;
 /// <summary>
 /// Custom validation operations class
 /// </summary>
-/// <param name="templates"></param>
-public class CustomValidators(
-    ITabellaMessageTemplatesProvider templates
-    ) : ICustomValidators
+public static class CustomValidators
 {
+    private static ITabellaMessageTemplatesProvider Templates => CustomValidatorContextAccessor.Current.Templates;
+
     /// <summary>
     /// Validates that the input is a numeric value within the specified range.
     /// </summary>
@@ -23,7 +22,7 @@ public class CustomValidators(
     /// <param name="max"></param>
     /// <param name="allowNullValues"></param>
     /// <returns></returns>
-    public CustomValidatorDelegate NumericRangeValidator(double min, double max, bool allowNullValues = false)
+    public static CustomValidatorDelegate NumericRangeValidator(double min, double max, bool allowNullValues = false)
     {
         return inputValue =>
         {
@@ -31,7 +30,7 @@ public class CustomValidators(
             {
                 return allowNullValues
                     ? CustomValidationResult.Success()
-                    : CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageNullNotAllowed));
+                    : CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageNullNotAllowed));
             }
 
             return inputValue switch
@@ -41,7 +40,7 @@ public class CustomValidators(
                 float floatValue when floatValue >= min && floatValue <= max => CustomValidationResult.Success(),
                 decimal decimalValue when(double)decimalValue >= min && (double)decimalValue <= max => CustomValidationResult.Success(),
                 string stringValue when double.TryParse(stringValue, out double parsed) && parsed >= min && parsed <= max => CustomValidationResult.Success(),
-                _ => CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageInvalidNumericRange)
+                _ => CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageInvalidNumericRange)
                     .With(TabellaConstants.MessagePlaceholderCurrentValue, inputValue.ToString() ?? string.Empty)
                     .With("Min", min.ToString(CultureInfo.InvariantCulture))
                     .With("Max", max.ToString(CultureInfo.InvariantCulture))
@@ -57,7 +56,7 @@ public class CustomValidators(
     /// <param name="maxLength"></param>
     /// <param name="allowNullValues"></param>
     /// <returns></returns>
-    public CustomValidatorDelegate StringLengthValidator(int? minLength, int? maxLength, bool allowNullValues = false)
+    public static CustomValidatorDelegate StringLengthValidator(int? minLength, int? maxLength, bool allowNullValues = false)
     {
         return inputValue =>
         {
@@ -67,12 +66,12 @@ public class CustomValidators(
             {
                 return allowNullValues
                     ? CustomValidationResult.Success()
-                    : CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageNullNotAllowed));
+                    : CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageNullNotAllowed));
             }
 
             if(inputValue is not string stringValue)
             {
-                return CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageInvalidStringType)
+                return CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageInvalidStringType)
                     .With(TabellaConstants.MessagePlaceholderCurrentValue, inputValue.ToString() ?? string.Empty));
             }
 
@@ -81,7 +80,7 @@ public class CustomValidators(
 
             if (minLengthNotReached || maxLengthExceeded)
             {
-                return CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageInvalidStringLength)
+                return CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageInvalidStringLength)
                     .With(TabellaConstants.MessagePlaceholderCurrentValue, inputValue.ToString() ?? string.Empty)
                     .With("MinLength", minLength.ToString() ?? TabellaConstants.MessageRangeNoEndSymbol)
                     .With("MaxLength", maxLength?.ToString() ?? TabellaConstants.MessageRangeNoEndSymbol)
@@ -99,7 +98,7 @@ public class CustomValidators(
     /// <param name="scale"></param>
     /// <param name="allowNullValues"></param>
     /// <returns></returns>
-    public CustomValidatorDelegate DecimalPrecisionScaleValidator(int precision, int scale, bool allowNullValues = false)
+    public static CustomValidatorDelegate DecimalPrecisionScaleValidator(int precision, int scale, bool allowNullValues = false)
     {
         return inputValue =>
         {
@@ -107,7 +106,7 @@ public class CustomValidators(
             {
                 return allowNullValues
                     ? CustomValidationResult.Success()
-                    : CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageNullNotAllowed));
+                    : CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageNullNotAllowed));
             }
 
             if(inputValue is not decimal decimalValue)
@@ -118,7 +117,7 @@ public class CustomValidators(
                 }
                 else
                 {
-                    return CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageInvalidDecimalType)
+                    return CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageInvalidDecimalType)
                         .With(TabellaConstants.MessagePlaceholderCurrentValue, inputValue.ToString() ?? string.Empty));
                 }
             }
@@ -131,7 +130,7 @@ public class CustomValidators(
 
             if(integerDigits + fractionalDigits > precision || fractionalDigits > scale)
             {
-                return CustomValidationResult.Failure(new MessageBuilder(templates.ValidationMessageInvalidDecimalPrecisionScale)
+                return CustomValidationResult.Failure(new MessageBuilder(Templates.ValidationMessageInvalidDecimalPrecisionScale)
                         .With(TabellaConstants.MessagePlaceholderCurrentValue, inputValue.ToString() ?? string.Empty)
                         .With("Precision", precision.ToString())
                         .With("Scale", scale.ToString())
