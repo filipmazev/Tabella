@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Maculare.Nexus.Tabella</id>
+    <version>1.0.12</version>
+    <authors>Filip Mazev</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <description>Tabular file ORM and export processor.</description>
+    <tags>messages localization templates di</tags>
+    <repository type="git" url="https://github.com/filipmazev/Tabella" branch="refs/heads/main" commit="4309f9a15ce39a5d503616428d1fbc7a2549d6e0" />
+    <dependencies>
+      <group targetFramework="net10.0">
+        <dependency id="DocumentFormat.OpenXml" version="3.3.0" exclude="Build,Analyzers" />
+        <dependency id="MessageKit" version="1.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.dll" target="lib/net10.0/Tabella.dll" />
+    <file src="/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/bin/Release/net10.0/Tabella.xml" target="lib/net10.0/Tabella.xml" />
+    <file src="/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/README.md" target="/README.md" />
+  </files>
+</package>
