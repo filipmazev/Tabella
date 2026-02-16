@@ -34,7 +34,7 @@
           }
         }
       },
-      "MessageKit/1.0.2": {
+      "Maculare.Nexus.MessageKit/1.0.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.1",
@@ -170,16 +170,17 @@
         "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.xml"
       ]
     },
-    "MessageKit/1.0.2": {
-      "sha512": "6ngXJRLIA6ir29W1cBsHlvGoBYP9EzsrQK336aOAKDAN1CRwpTC8c90cPbb0JEmVk9fcMUfHiL9OvZltycuWFQ==",
+    "Maculare.Nexus.MessageKit/1.0.4": {
+      "sha512": "BFB/Q3Pq+ZUo6y/So/FQGnltSZXQqt1DcvucFnkp/+KdVOxguV61itWh6zDdq4R6hm/gNQcbRDEAbqFJ9Ss4JQ==",
       "type": "package",
-      "path": "messagekit/1.0.2",
+      "path": "maculare.nexus.messagekit/1.0.4",
       "files": [
         ".nupkg.metadata",
+        "README.md",
         "lib/net10.0/MessageKit.dll",
         "lib/net10.0/MessageKit.xml",
-        "messagekit.1.0.2.nupkg.sha512",
-        "messagekit.nuspec"
+        "maculare.nexus.messagekit.1.0.4.nupkg.sha512",
+        "maculare.nexus.messagekit.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.1": {
@@ -321,14 +322,14 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "DocumentFormat.OpenXml >= 3.3.0",
-      "MessageKit >= 1.0.2"
+      "Maculare.Nexus.MessageKit >= 1.0.4"
     ]
   },
   "packageFolders": {
     "/Users/filipmazev/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.12",
+    "version": "1.0.13",
     "restore": {
       "projectUniqueName": "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/Tabella.csproj",
       "projectName": "Maculare.Nexus.Tabella",
@@ -373,9 +374,9 @@
             "target": "Package",
             "version": "[3.3.0, )"
           },
-          "MessageKit": {
+          "Maculare.Nexus.MessageKit": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.4, )"
           }
         },
         "imports": [

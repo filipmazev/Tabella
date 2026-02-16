@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UcIjqD/ri/U=",
+  "dgSpecHash": "5S/4oRFws1Q=",
   "success": true,
   "projectFilePath": "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/Tabella.csproj",
   "expectedPackageFiles": [
     "/Users/filipmazev/.nuget/packages/documentformat.openxml/3.3.0/documentformat.openxml.3.3.0.nupkg.sha512",
     "/Users/filipmazev/.nuget/packages/documentformat.openxml.framework/3.3.0/documentformat.openxml.framework.3.3.0.nupkg.sha512",
-    "/Users/filipmazev/.nuget/packages/messagekit/1.0.2/messagekit.1.0.2.nupkg.sha512",
+    "/Users/filipmazev/.nuget/packages/maculare.nexus.messagekit/1.0.4/maculare.nexus.messagekit.1.0.4.nupkg.sha512",
     "/Users/filipmazev/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.1/microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
     "/Users/filipmazev/.nuget/packages/microsoft.extensions.options/10.0.1/microsoft.extensions.options.10.0.1.nupkg.sha512",
     "/Users/filipmazev/.nuget/packages/microsoft.extensions.primitives/10.0.1/microsoft.extensions.primitives.10.0.1.nupkg.sha512",

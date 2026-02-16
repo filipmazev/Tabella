@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/Tabella.csproj": {
-      "version": "1.0.12",
+      "version": "1.0.13",
       "restore": {
         "projectUniqueName": "/Users/filipmazev/Documents/Code/Main/Libraries/NuGet/Tabella/Tabella/Tabella.csproj",
         "projectName": "Maculare.Nexus.Tabella",
@@ -50,9 +50,9 @@
               "target": "Package",
               "version": "[3.3.0, )"
             },
-            "MessageKit": {
+            "Maculare.Nexus.MessageKit": {
               "target": "Package",
-              "version": "[1.0.2, )"
+              "version": "[1.0.4, )"
             }
           },
           "imports": [

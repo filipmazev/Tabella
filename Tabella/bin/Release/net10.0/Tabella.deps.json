@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "Tabella/1.0.12": {
+      "Tabella/1.0.13": {
         "dependencies": {
           "DocumentFormat.OpenXml": "3.3.0",
-          "MessageKit": "1.0.2"
+          "Maculare.Nexus.MessageKit": "1.0.4"
         },
         "runtime": {
           "Tabella.dll": {}
@@ -37,15 +37,15 @@
           }
         }
       },
-      "MessageKit/1.0.2": {
+      "Maculare.Nexus.MessageKit/1.0.4": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.1",
           "Microsoft.Extensions.Options": "10.0.1"
         },
         "runtime": {
           "lib/net10.0/MessageKit.dll": {
-            "assemblyVersion": "1.0.2.0",
-            "fileVersion": "1.0.2.0"
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
           }
         }
       },
@@ -88,7 +88,7 @@
     }
   },
   "libraries": {
-    "Tabella/1.0.12": {
+    "Tabella/1.0.13": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -107,12 +107,12 @@
       "path": "documentformat.openxml.framework/3.3.0",
       "hashPath": "documentformat.openxml.framework.3.3.0.nupkg.sha512"
     },
-    "MessageKit/1.0.2": {
+    "Maculare.Nexus.MessageKit/1.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6ngXJRLIA6ir29W1cBsHlvGoBYP9EzsrQK336aOAKDAN1CRwpTC8c90cPbb0JEmVk9fcMUfHiL9OvZltycuWFQ==",
-      "path": "messagekit/1.0.2",
-      "hashPath": "messagekit.1.0.2.nupkg.sha512"
+      "sha512": "sha512-BFB/Q3Pq+ZUo6y/So/FQGnltSZXQqt1DcvucFnkp/+KdVOxguV61itWh6zDdq4R6hm/gNQcbRDEAbqFJ9Ss4JQ==",
+      "path": "maculare.nexus.messagekit/1.0.4",
+      "hashPath": "maculare.nexus.messagekit.1.0.4.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.1": {
       "type": "package",

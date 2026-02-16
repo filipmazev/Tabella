@@ -5,7 +5,7 @@
 
     <IsPackable>true</IsPackable>
     <PackageId>Maculare.Nexus.Tabella</PackageId>
-    <Version>1.0.12</Version>
+    <Version>1.0.13</Version>
     <Authors>Filip Mazev</Authors>
     <Company>Maculare</Company>
     <Product>Tabella</Product>
@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
-    <PackageReference Include="MessageKit" Version="1.0.2" />
+    <PackageReference Include="Maculare.Nexus.MessageKit" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>
